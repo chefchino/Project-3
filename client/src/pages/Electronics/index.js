@@ -1,5 +1,6 @@
 import products from "../../product.json";
 import NavTabs from "../../components/NavBar";
+import SearchBar from "../../components/SearchBar";
 import Wrapper from "../../components/Wrapper";
 import {Container} from "../../components/Grid";
 import Card from "../../components/Card";
@@ -14,10 +15,9 @@ class Electronics extends Component {
         console.log(this.state.friends)
         return (
             <Container fluid>
-
             <NavTabs/>
-            
             <h1 className="title">Ecommerce</h1>
+            <SearchBar/>
             <Wrapper>
                 {this.state.products.map(product => (
                     <Card
