@@ -15,7 +15,7 @@ class Electronics extends Component {
         console.log(this.state.friends)
         return (
             <Container fluid>
-            <NavTabs/>
+
             <h1 className="title">Ecommerce</h1>
             <SearchBar/>
             <Wrapper>

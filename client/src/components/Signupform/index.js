@@ -1,5 +1,5 @@
 import React from "react";
-import "./stle.css";
+import "./style.css";
 
 function SignupForm(props) {
     return (

@@ -8,7 +8,7 @@ class Signup extends Component {
     render() {
         return (
             <div>
-                <NavTabs/>
+
                 <h1 className="title">ECommerce</h1>
                 <SignupForm/>
             </div>
