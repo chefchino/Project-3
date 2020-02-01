@@ -25,7 +25,7 @@ function LoginForm(props) {
                     id="passwordLogin"
                 />
                 <button type="submit" onClick={props.handleFormSubmit} className="btn btn-success">
-                    Search
+                    Login
         </button>
             </div>
         </form>

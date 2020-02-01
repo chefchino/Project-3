@@ -1,5 +1,4 @@
-import products from "../../product.json";
-import NavTabs from "../../components/NavBar";
+// import products from "../../product.json";
 import Wrapper from "../../components/Wrapper";
 import {Container }from "../../components/Grid";
 import Card from "../../components/Card";
@@ -7,7 +6,7 @@ import React, { Component } from "react";
 
 class Electronic extends Component {
     state = {
-        products: products
+        // products: products
     };
 
     render() {
