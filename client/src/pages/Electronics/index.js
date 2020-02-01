@@ -16,6 +16,7 @@ class Electronics extends Component {
             <Container fluid>
 
             <NavTabs/>
+            
             <h1 className="title">Ecommerce</h1>
             <Wrapper>
                 {this.state.products.map(product => (
