@@ -7,9 +7,9 @@ function SignupForm(props) {
             <div className="form">
             <label htmlFor="username">Username:</label>
             <input
-            value={props.username}
+            value={props.userName}
             onChange={props.handleInputChange}
-            name="username"
+            name="userName"
             type="text"
             className="form-control"
             placholder="userName"
@@ -17,9 +17,9 @@ function SignupForm(props) {
             />
             <label htmlFor="password">Password:</label>
             <input
-            value={props.password}
+            value={props.passWord}
             onChange={props.handleInputChange}
-            name="password"
+            name="passWord"
             type="password"
             className="form-control"
             placholder="Password"

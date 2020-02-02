@@ -21,7 +21,7 @@ function LoginForm(props) {
                     name="password"
                     type="password"
                     className="form-control"
-                    placeholder="password"
+                    placeholder="passWord"
                     id="passwordLogin"
                 />
                 <button type="submit" onClick={props.handleFormSubmit} className="btn btn-success">
