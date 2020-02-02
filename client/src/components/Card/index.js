@@ -18,9 +18,13 @@ function Card(props) {
                     <li>
                         <strong>{props.price}</strong>
                     </li>
-                    <button typr="submit" onClick={props.handleFormSubmit}
+                    <button type="submit" onClick={props.handleFormCart}
                         className="btn btn-success">
-                        Search
+                        Cart
+                </button>
+                    <button type="submit" onClick={props.handleDetail}
+                        className="btn btn-success">
+                        Details
                 </button>
                 </ul>
             </div>

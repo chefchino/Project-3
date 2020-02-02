@@ -1,14 +1,19 @@
 var express = require("express");
+var mongoose = require("mongoose");
+var routes = require("./routes");
 var app =express();
-var axios = require("axios");
 var PORT = process.env.PORT || 3001;
-var routes =
 
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+// if (process.env.NODE_ENV === "production") {
+//     app.use(express.static("client/build"));
+//   }
 
-app.use(routes)
+app.use(routes);
 
-
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/productlist")
 
 app.listen(PORT, function() {
     console.log(`API Sever is listening on PORT ${PORT}!`)
-})
+});
