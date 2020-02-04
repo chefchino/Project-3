@@ -2,17 +2,23 @@ const db = require("../models");
 
 // Defining methods for the ProductsController
 module.exports = {
-  findAll: function(req, res) {
+  findAll: 
+ // function(){    return 
+    function(req, res) {
     db.Product
-      .find(req.query)
+      .find(req.params.id)
       .sort({ date: -1 })
       .then(dbProduct => res.json(dbProduct))
       .catch(err => res.status(422).json(err));
-  },
+ // }
+},
   findById: function(req, res) {
+    console.log("ID",req.params.id)
     db.Product
-      .findById(req.params.id)
-      .then(dbProduct => res.json(dbProduct))
+      .find({"title":{$text: {$search: req.params.id}}})
+      .then(dbProduct =>{
+        console.log("I'm still here",dbProduct)
+        res.json(dbProduct)})
       .catch(err => res.status(422).json(err));
   },
   create: function(req, res) {

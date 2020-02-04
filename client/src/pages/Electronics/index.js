@@ -12,9 +12,16 @@ class Electronics extends Component {
         search: "",
         results: []
     };
-    // componentDidMount() {
-    //     this.setState({ products: products })
-    // }
+    componentDidMount() {
+        this.loadProduct();
+    }
+    loadProduct = () => {
+        API.getAllProducts()
+        .then(res =>
+            this.setState({products: res.data, title: "", image: "", category: "", rating: "", price:"", description: "" })
+            )
+            .catch(err => console.log(err));
+    };
     handleInputChange = e => {
         this.setState({ search: e.target.value });
     };
@@ -43,9 +50,10 @@ class Electronics extends Component {
                         <Card
                             id={product.id}
                             key={product.id}
-                            title={product.id}
+                            title={product.title}
                             rating={product.rating}
                             price={product.price}
+                            image={product.image}
                         />
 
 

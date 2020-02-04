@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const db = require("../models");
-mongoose.connect(process.env.MONGODB_URI ||"mongodb://loaclhost/productlist"
+mongoose.connect(process.env.MONGODB_URI ||"mongodb://localhost/productlist"
 );
 
 const productSeed = [
@@ -25,7 +25,7 @@ const productSeed = [
     {
         "id":3,
         "title":"",
-        "image":"",
+        "image":"https://www.marylandzoo.org/wp-content/uploads/2017/10/river_otter_web-1024x683.jpg",
         "category":"Electronics",
         "rating":"4/5",
         "price":12.99,
