@@ -5,6 +5,7 @@ import { Container } from "../../components/Grid";
 import Card from "../../components/Card";
 import React, { Component } from "react";
 import API from "../../utils/API.js";
+import "./style.css";
 
 class Electronics extends Component {
     state = {
@@ -52,6 +53,7 @@ class Electronics extends Component {
                     handleFormSubmit={this.handleFormSubmit}
                     handleInputChange={this.handleInputChange}
                 />
+                <hr></hr>
                 <Wrapper>
                     {this.state.products.map(product => (
                         <Card
