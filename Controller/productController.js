@@ -12,7 +12,7 @@ module.exports = {
       .catch(err => res.status(422).json(err));
  // }
 },
-  findById: function(req, res) {
+  findByTitle: function(req, res) {
     console.log("ID",req.params.id)
     db.Product
       .find({"title":{$text: {$search: req.params.id}}})

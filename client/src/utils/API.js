@@ -5,7 +5,7 @@ export default {
         return axios.get("api/products")
     },
     getProduct: function(search) {
-        console.log(search)
+        console.log("search",search)
         return axios.get("/api/products/" + search);
 },
     logIn: function(userLogin, passwordLogin) {

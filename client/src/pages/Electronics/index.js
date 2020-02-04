@@ -14,6 +14,7 @@ class Electronics extends Component {
     };
     componentDidMount() {
         this.loadProduct();
+        this.loadSearch();
     }
     loadProduct = () => {
         API.getAllProducts()
@@ -22,6 +23,12 @@ class Electronics extends Component {
             )
             .catch(err => console.log(err));
     };
+    loadSearch = () => {
+        this.setState({products: []})
+        API.getProduct()
+        .then(res =>
+            this.setState({products: res.data, title: "", image: "", category: "", rating: "", price:"", description: "" }))
+    }
     handleInputChange = e => {
         this.setState({ search: e.target.value });
     };
