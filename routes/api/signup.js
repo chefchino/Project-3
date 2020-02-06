@@ -1,8 +1,16 @@
-const User = require("../../models/User");
+const router = require("express").Router();
+const User = require("../../models");
 
-module.exports = (app) => {
-
-    app.post("/api/account/signup", (req, res, next) => {
+// router.post("/api/test", (req, res) =>  {
+    
+    // })
+    
+    module.exports = () => {
+        
+        router.post("/api/signup",
+        (req, res) => {
+            console.log("I'm in")
+            console.log("REQ", req)
         const { body }= req;
         const {
             firstName,
@@ -15,6 +23,7 @@ module.exports = (app) => {
             state,
             zipcode
         } = body;
+        console.log("BODY", body)
         if (!firstName) {
             res.end({
                 success: false,
@@ -71,7 +80,7 @@ module.exports = (app) => {
         }
         email = email.toLowerCase();
         User.find({
-            emai: email
+            email: email
         },(err, previousUsers) => {
             if (err) {
                 res.end({
@@ -94,7 +103,8 @@ module.exports = (app) => {
             newUser.city = city;
             newUser.state = state;
             newUser.zipcode = zipcode
-            newUser.save((err, user) => {
+            console.log("newUser", newUser)
+            newUser.save((err, User) => {
                 if (err) {
                     res.end({
                         success: false,

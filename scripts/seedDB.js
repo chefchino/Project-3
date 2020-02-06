@@ -24,7 +24,7 @@ const productSeed = [
     },
     {
         "id":3,
-        "title":"",
+        "title":"Apple Tart",
         "image":"https://www.marylandzoo.org/wp-content/uploads/2017/10/river_otter_web-1024x683.jpg",
         "category":"Electronics",
         "rating":"4/5",
@@ -69,7 +69,7 @@ const productSeed = [
     },
     {
         "id":8,
-        "title":"",
+        "title":"Apple app",
         "image":"",
         "category":"Electronics",
         "rating":"4/5",
@@ -105,7 +105,7 @@ const productSeed = [
     },
     {
         "id":12,
-        "title":"",
+        "title":"getting Apples",
         "image":"",
         "category":"Electronics",
         "rating":"4/5",

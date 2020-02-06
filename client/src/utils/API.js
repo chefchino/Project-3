@@ -5,11 +5,14 @@ export default {
         return axios.get("api/products")
     },
     getProduct: function(search) {
-        console.log("search",search)
+        // console.log("search",search)
         return axios.get("/api/products/" + search);
 },
     logIn: function(userLogin, passwordLogin) {
         console.log(userLogin, passwordLogin)
         return axios.post("api/users/")
+    }, 
+    signUp: function() {
+        return axios.post("api/signup")
     }
 };

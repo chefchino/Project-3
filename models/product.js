@@ -10,7 +10,7 @@ const productSchema = new Schema({
   rating: String,
   date: { type: Date, default: Date.now }
 });
-
+productSchema.index({title:"text"})
 const Product = mongoose.model("Product", productSchema);
 
 module.exports = Product;

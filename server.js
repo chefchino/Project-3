@@ -1,14 +1,21 @@
 var express = require("express");
 var mongoose = require("mongoose");
 var routes = require("./routes");
+var passport = require("./routes/api/passport");
+var session = require("express-session");
 var app =express();
 var PORT = process.env.PORT || 3001;
 
-const db= require("./models")
+
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-console.log(routes)
+app.use(session({ secret: "unique Key", resave: true, saveUninitialized: true }));
+app.use(passport.initialize());
+app.use(passport.session());
+
+
+// console.log(routes)
 app.use("/",routes);
 
 // if (process.env.NODE_ENV === "production") {

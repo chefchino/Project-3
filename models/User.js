@@ -6,8 +6,9 @@ const Schema = mongoose.Schema;
 const UserSchema = new Schema({
   firstName: { type: String, required: true },
   lastName: { type: String, required: true },
-  password: { type: String, required: true },
-  email: { type: String, required: true },
+  username: {type: String, required: true, unique: true},
+  password: { type: String, required: true, minlength: 8 },
+  email: { type: String, required: true, unique: true },
   street: { type: String, required: true },
   city: { type: String, required: true },
   state: { type: String, required: true },
@@ -17,7 +18,11 @@ const UserSchema = new Schema({
 });
 UserSchema.methods.validPassword = function(password) {
   return bcrypt.compareSync(password, this.password)
+  
 }
+    // UserSchema.addHook("beforeCreate", function (user) {
+    //   user.password = bcrypt.hashSync(user.password, bcrypt.genSaltSync(10), null);
+    // });
 const User = mongoose.model("User", UserSchema);
 
 module.exports = User;

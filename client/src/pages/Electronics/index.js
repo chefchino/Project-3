@@ -15,7 +15,7 @@ class Electronics extends Component {
     };
     componentDidMount() {
         this.loadProduct();
-        this.loadSearch();
+        // this.loadSearch();
     }
     loadProduct = () => {
         API.getAllProducts()
@@ -25,10 +25,11 @@ class Electronics extends Component {
             .catch(err => console.log(err));
     };
     loadSearch = () => {
-        this.setState({products: []})
-        API.getProduct()
+        // this.setState({products: []})
+        API.getProduct(this.state.search)
         .then(res =>
             this.setState({products: res.data, title: "", image: "", category: "", rating: "", price:"", description: "" }))
+            console.log("here---------------------------------------------")
     }
     handleInputChange = e => {
         this.setState({ search: e.target.value });
@@ -36,11 +37,14 @@ class Electronics extends Component {
     handleFormSubmit = e => {
         e.preventDefault();
         console.log(this.state.search)
-        API.getProduct(this.state.search)
-        .then(res => {
-            this.setState({ results: res.products })
-        })
-        console.log(this.state.results)
+        this.loadSearch();
+        // API.getProduct(this.state.search)
+        // .then(res => {
+        //     this.setState({ results: res.products })
+        //     this.setState({search: ""})
+
+        // })
+        // console.log(this.state.results)
     }
 
     render() {
