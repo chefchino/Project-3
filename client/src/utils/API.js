@@ -13,6 +13,7 @@ export default {
         return axios.post("api/users/")
     }, 
     signUp: function() {
+        console.log("I'm in SIGNUP!!!!!!!!!!!!!!!!!!!!!!!!!!!")
         return axios.post("api/signup")
     }
 };
