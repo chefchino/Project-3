@@ -13,7 +13,10 @@ class Login extends Component {
     handleLogin = () => {
         if (this.state.userName &&
             this.state.passWord) {
-                API.logIn({})
+                API.logIn({
+                userName: this.state.userName,
+                passWord: this.state.passWord
+            })
                 .then(function(res) {
                     sessionStorage.setItem("Logged In", res.id)
                     window.location.replace("/electronics")
