@@ -9,7 +9,7 @@ function LoginForm(props) {
                 <input
                     value={props.username}
                     onChange={props.handleInputChange}
-                    name="username"
+                    name="userName"
                     type="text"
                     className="form-control"
                     placeholder="UserName"
@@ -18,7 +18,7 @@ function LoginForm(props) {
                 <input
                     value={props.password}
                     onChange={props.handleInputChange}
-                    name="password"
+                    name="passWord"
                     type="password"
                     className="form-control"
                     placeholder="passWord"

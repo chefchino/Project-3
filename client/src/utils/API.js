@@ -5,15 +5,13 @@ export default {
         return axios.get("api/products")
     },
     getProduct: function(search) {
-        // console.log("search",search)
         return axios.get("/api/products/" + search);
 },
-    logIn: function(userLogin, passwordLogin) {
-        console.log(userLogin, passwordLogin)
-        return axios.post("api/users/")
+    logIn: function(loginData) {
+        // console.log("I LOGGED IN!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+        return axios.post("api/login", loginData)
     }, 
-    signUp: function() {
-        console.log("I'm in SIGNUP!!!!!!!!!!!!!!!!!!!!!!!!!!!")
-        return axios.post("api/signup")
+    signUp: function(userData) {
+        return axios.post("api/signup", userData)
     }
 };

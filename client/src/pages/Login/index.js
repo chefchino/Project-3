@@ -1,15 +1,26 @@
 import React, { Component } from "react";
 import LoginForm from "../../components/Login";
 import "./stlye.css";
-// import API from "../../utils/API";
 import { Link, Route } from "react-router-dom";
 import Signup from "../Signup";
+import API from "../../utils/API";
 
 class Login extends Component {
     state = {
-        userLogin: "",
-        passwordLogin: ""
+        userName: "",
+        passWord: ""
     };
+    handleLogin = () => {
+        if (this.state.userName &&
+            this.state.passWord) {
+                API.logIn({})
+                .then(function(res) {
+                    sessionStorage.setItem("Logged In", res.id)
+                    window.location.replace("/electronics")
+                })
+                .catch(err => console.log(err));
+            }
+    }
     handleInputChange = e => {
         const { name, value } = e.target;
         this.setState({
@@ -18,7 +29,8 @@ class Login extends Component {
     };
     handleFormSubmit = e => {
         e.preventDefault();
-        console.log(this.state.userLogin, this.state.passwordLogin)
+        console.log(this.state.userName, this.state.passWord)
+        this.handleLogin();
         // API.logIn(this.state.username, this.state.password)
         //     .then(res => {
         // console.log(res)

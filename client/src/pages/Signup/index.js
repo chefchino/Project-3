@@ -45,15 +45,15 @@ class Signup extends Component {
                 })
                 .catch(err => console.log(err));
             }
-        console.log("firstName:", this.state.firstName, 
-                    "lastName:", this.state.lastName, 
-                    "userName:", this.state.userName, 
-                    "passWord:", this.state.passWord, 
-                    "email:", this.state.email, 
-                    "street:", this.state.street, 
-                    "city:", this.state.city, 
-                    "state:", this.state.state, 
-                    "zipcode:", this.state.zipcode)
+            console.log("firstName:", this.state.firstName, 
+                        "lastName:", this.state.lastName, 
+                        "userName:", this.state.userName, 
+                        "passWord:", this.state.passWord, 
+                        "email:", this.state.email, 
+                        "street:", this.state.street, 
+                        "city:", this.state.city, 
+                        "state:", this.state.state, 
+                        "zipcode:", this.state.zipcode)
 
     }
     handleInputChange = e => {
