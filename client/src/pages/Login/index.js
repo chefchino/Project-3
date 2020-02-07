@@ -12,12 +12,14 @@ class Login extends Component {
     };
     handleLogin = () => {
         if (this.state.userName &&
-            this.state.passWord) {
+            this.state.passWord
+            ) {
                 API.logIn({
                 userName: this.state.userName,
                 passWord: this.state.passWord
             })
-                .then(function(res) {
+            .then(function(res) {
+                // console.log(this.state.userName, this.state.passWord)
                     sessionStorage.setItem("Logged In", res.id)
                     window.location.replace("/electronics")
                 })
@@ -30,9 +32,8 @@ class Login extends Component {
             [name]: value
         });
     };
-    handleFormSubmit = e => {
+    handleLoginSubmit = e => {
         e.preventDefault();
-        console.log(this.state.userName, this.state.passWord)
         this.handleLogin();
         // API.logIn(this.state.username, this.state.password)
         //     .then(res => {
@@ -49,7 +50,7 @@ class Login extends Component {
                 <Route exact path="/signup" component={Signup} />
                 <h1 className="title">ECommerce</h1>
                 <LoginForm
-                    handleFormSubmit={this.handleFormSubmit}
+                    handleLoginSubmit={this.handleLoginSubmit}
                     handleInputChange={this.handleInputChange}
                 />
             </div>
