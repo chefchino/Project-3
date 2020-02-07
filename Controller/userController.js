@@ -49,26 +49,26 @@ module.exports = {
         // .catch(err => res.status(422).json(err))
     },
     findByUser: function (req, res) {
-        console.log("I'M IN THE USERCONTROLLER!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
         db.User
-            .findOne({
-                userName: req.body.userName
-            })
-            .then(user => {
-                if (user) {
-                    if (bcrypt.compareSync(req.body.passWord, user.passWord)) {
-                        res.json({
-                            success: true,
-                            message: "Login Successful!"
-                        })
-                    }
-                } else {
+        .findOne({
+            userName: req.body.userName
+        })
+        .then(user => {
+            if (user) {
+                if (bcrypt.compareSync(req.body.passWord, user.passWord)) {
                     res.json({
-                        success: false,
-                        message:"Error User Does NOT Exists"})
+                        success: true,
+                        message: "Login Successful!"
+                    })
+                }
+            } else {
+                res.json({
+                    success: false,
+                    message:"Error User Does NOT Exists"})
                 }
             })
-    }
+        }
+        // console.log("I'M IN THE USERCONTROLLER!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
 }
 // }
 
