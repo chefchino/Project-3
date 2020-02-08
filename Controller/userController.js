@@ -1,5 +1,5 @@
 const db = require("../models");
-const path = require("path");
+const bcrypt= require("bcryptjs")
 
 module.exports = {
     create: function (req, res) {
@@ -15,7 +15,6 @@ module.exports = {
             state,
             zipcode
         } = req.body;
-        // console.log("REQ", req.body)
         db.User
             .create({
                 firstName,
@@ -28,39 +27,9 @@ module.exports = {
                 state,
                 zipcode
             })
-        // console.log("I'm in")
-        // const  body = req;
-        // console.log("BODY", req.body)
-        // const newUser = new db.User();
-        // newUser.firstName = firstName;
-        // newUser.lastName = lastName;
-        // newUser.userName = userName;
-        // newUser.passWord = passWord;
-        // newUser.email = email;
-        // newUser.street = street;
-        // newUser.city = city;
-        // newUser.state = state;
-        // newUser.zipcode = zipcode
-        // console.log("newUser", newUser)
-        // newUser.save((err, User) => {
-        //     if (err) {
-        //         res.json({
-        //             success: false,
-        //             message: "Error in Server"
-        //         });
-        //     }
-        //     if (User)
-        //         res.json({
-        //             success: true,
-        //             message: "Signed Up!"
-        //         })
-        // })
-        .then(dbUser => {
-            console.log("DBUSER", dbUser)
-            res.json(dbUser)}
+        .then(dbUser =>res.json(dbUser)
             )
-        .catch(err => {console.log("ERRORR", err)
- res.status(422).json(err)})
+        .catch(err =>res.status(422).json(err))
     },
     findByUser: function (req, res) {
         db.User
@@ -68,8 +37,9 @@ module.exports = {
             userName: req.body.userName
         })
         .then(user => {
+            console.log("I'M IN!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!", user)
             if (user) {
-                if (bcrypt.compareSync(req.body.passWord, user.passWord)) {
+                if (bcrypt.validPassword(this.passWord)===user.passWord) {
                     res.json({
                         success: true,
                         message: "Login Successful!"
@@ -82,22 +52,4 @@ module.exports = {
                 }
             })
         }
-        // console.log("I'M IN THE USERCONTROLLER!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
 }
-// }
-
-// email = email.toLowerCase();
-// db.User.find({
-//     email: email
-// },(err, previousUsers) => {
-//     if (err) {
-//         res.end({
-//             success: false,
-//             message:"Error in Server"
-//         });
-//     } else if (previousUsers.length >0) {
-//         res.end({
-//             success: false,
-//             message:"Error Account already exists"
-//         });
-//     } 

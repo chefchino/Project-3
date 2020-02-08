@@ -68,8 +68,6 @@ class Electronics extends Component {
                             price={product.price}
                             image={product.image}
                         />
-
-
                     )
                     )}
 

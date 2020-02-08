@@ -16,14 +16,10 @@ const UserSchema = new Schema({
   isDeleted:{type:Boolean, default: false},
   date: { type: Date, default: Date.now }
 });
-UserSchema.methods.validPassword = function(password) {
-  return bcrypt.compareSync(password, this.password)
-  
+    UserSchema.methods.validPassword=function(passWord) {
+      return bcrypt.compare(passWord, this.passWord);
+    }
 
-}
-    // UserSchema.addHook("beforeCreate", function (user) {
-    //   user.password = bcrypt.hashSync(user.password, bcrypt.genSaltSync(10), null);
-    // });
 const User = mongoose.model("User", UserSchema);
 
 module.exports = User;
