@@ -15,38 +15,52 @@ module.exports = {
             state,
             zipcode
         } = req.body;
-        console.log("REQ", req.body)
+        // console.log("REQ", req.body)
         db.User
-            .create(req.body)
-        console.log("I'm in")
+            .create({
+                firstName,
+                lastName,
+                userName,
+                passWord,
+                email,
+                street,
+                city,
+                state,
+                zipcode
+            })
+        // console.log("I'm in")
         // const  body = req;
         // console.log("BODY", req.body)
-        const newUser = new db.User();
-        newUser.firstName = firstName;
-        newUser.lastName = lastName;
-        newUser.userName = userName;
-        newUser.passWord = passWord;
-        newUser.email = email;
-        newUser.street = street;
-        newUser.city = city;
-        newUser.state = state;
-        newUser.zipcode = zipcode
-        console.log("newUser", newUser)
-        newUser.save((err, User) => {
-            if (err) {
-                res.json({
-                    success: false,
-                    message: "Error in Server"
-                });
-            }
-            if (User)
-                res.json({
-                    success: true,
-                    message: "Signed Up!"
-                })
-        })
-        // .then(dbUser => res.json(dbUser))
-        // .catch(err => res.status(422).json(err))
+        // const newUser = new db.User();
+        // newUser.firstName = firstName;
+        // newUser.lastName = lastName;
+        // newUser.userName = userName;
+        // newUser.passWord = passWord;
+        // newUser.email = email;
+        // newUser.street = street;
+        // newUser.city = city;
+        // newUser.state = state;
+        // newUser.zipcode = zipcode
+        // console.log("newUser", newUser)
+        // newUser.save((err, User) => {
+        //     if (err) {
+        //         res.json({
+        //             success: false,
+        //             message: "Error in Server"
+        //         });
+        //     }
+        //     if (User)
+        //         res.json({
+        //             success: true,
+        //             message: "Signed Up!"
+        //         })
+        // })
+        .then(dbUser => {
+            console.log("DBUSER", dbUser)
+            res.json(dbUser)}
+            )
+        .catch(err => {console.log("ERRORR", err)
+ res.status(422).json(err)})
     },
     findByUser: function (req, res) {
         db.User
