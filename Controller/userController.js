@@ -1,5 +1,6 @@
 const db = require("../models");
 const bcrypt= require("bcryptjs")
+const passportL= require("passport-local");
 
 module.exports = {
     create: function (req, res) {
@@ -39,17 +40,26 @@ module.exports = {
         .then(user => {
             console.log("I'M IN!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!", user)
             if (user) {
-                if (bcrypt.validPassword(this.passWord)===user.passWord) {
-                    res.json({
-                        success: true,
-                        message: "Login Successful!"
-                    })
-                }
-            } else {
-                res.json({
-                    success: false,
-                    message:"Error User Does NOT Exists"})
-                }
-            })
+                // if (passportL.authenicate("local", {
+                //     successRedirect: "/electronics",
+                //     failureRedirect:"/",
+                //     failureFlash: 'Invalid username or password.'
+                // }));
+                
+                
+            //     this.passWord)) {
+            //         res.json({
+            //             success: true,
+            //             message: "Login Successful!"
+            //         })
+            //     }
+            // } else {
+            //     res.json({
+            //         success: false,
+            //         message:"Error User Does NOT Exists"})
+            //     }
+            // })
         }
+})
+    }
 }

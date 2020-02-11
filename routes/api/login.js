@@ -1,7 +1,16 @@
 const router = require("express").Router();
-const userController = require("../../Controller/userController.js")
+var passport = require("./passport");
+console.log(passport.authenticate("local"))
 
-router.route("/")
-.post(userController.findByUser)
+router.post("/",
+    req=>console.log("this far"),
+//   passport.authenticate("local",
+//   function(req, res) {
+//     console.log("I'M IN!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+//     res.json(req.user);
+//   }
+  
+//   )
+  )
 
 module.exports = router;

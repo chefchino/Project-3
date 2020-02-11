@@ -7,6 +7,7 @@ passport.use(new LocalStrategy(
     usernameField: "userName"
   },
   function(userName, passWord, done) {
+    console.log("trying")
     db.User.findOne({
       where: {
         userName: userName
