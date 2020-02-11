@@ -41,13 +41,9 @@ UserSchema.pre('save', function(next) {
 });
     UserSchema.methods.validPassword=function(passWord) {
 
-      return bcrypt.compare(passWord, this.passWord);
+      return bcrypt.compareSync(passWord, this.passWord);
     }
-    // var animalSchema = new Schema({ name: String, type: String });
 
-    // animalSchema.methods.findSimilarTypes = function(cb) {
-    //   return this.model('Animal').find({ type: this.type }, cb);
-    // };
 const User = mongoose.model("User", UserSchema);
 
 module.exports = User;
