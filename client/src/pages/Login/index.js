@@ -19,7 +19,6 @@ class Login extends Component {
                 passWord: this.state.passWord
             })
             .then(function(res) {
-                // console.log(this.state.userName, this.state.passWord)
                     sessionStorage.setItem("Logged In", res.id)
                     window.location.replace("/electronics")
                 })

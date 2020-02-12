@@ -103,11 +103,7 @@ class products extends Component {
                             handleAddToCart={this.handleAddToCart}
                             handleDetail={this.handleDetail}
                             
-                        />
-                        
-                    
-                        
-                    
+                        />   
                     )
                     )}
                     
