@@ -1,5 +1,6 @@
 import React from "react";
 import "./style.css";
+import Electronics from "../../pages/Cart";
 
 function Card(props) {
     return (
@@ -18,11 +19,15 @@ function Card(props) {
                     <li>
                         <strong>{props.price}</strong>
                     </li>
-                    <button type="submit" onClick={props.handleFormCart}
+                    <button type="cart-btn" onClick={()=>{props.handleAddToCart(props.id)}} 
+                    
+                        
                         className="btn btn-success">
-                        Cart
+                        Add to Cart
                 </button>
-                    <button type="submit" onClick={props.handleDetail}
+                    <button type="submit" onClick={()=>{
+                        console.log("you clicked me");
+                    }}
                         className="btn btn-success">
                         Details
                 </button>
