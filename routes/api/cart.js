@@ -1,8 +1,10 @@
 const router = require("express").Router();
-const productController = require("../../Controller/productController.js");
+const userController = require("../../Controller/userController");
 
 router.route("/:id")
-.get(productController.putInCart)
+// .get(userController.pullFromCart)
+.post(userController.putInCart)
+// console.log("HELLLLOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO")
 
 
 module.exports = router;

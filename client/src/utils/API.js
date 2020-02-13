@@ -12,5 +12,13 @@ export default {
     }, 
     signUp: function(userData) {
         return axios.post("api/signup", userData)
+    },
+    addCartItems: function(cartItem, UserId) {
+        console.log("i'M IN!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!&*(",cartItem)
+        return axios.post("api/cart/"+ UserId, cartItem )
+    },
+    getCartItems: function(cartItem, UserId) {
+        return axios.get("api/cart/" +UserId, cartItem)
     }
+
 };

@@ -4,7 +4,7 @@ const passportL= require("passport-local");
 
 module.exports = {
     create: function (req, res) {
-
+        
         const {
             firstName,
             lastName,
@@ -29,7 +29,7 @@ module.exports = {
                 zipcode
             })
         .then(dbUser =>res.json(dbUser)
-            )
+        )
         .catch(err =>res.status(422).json(err))
     },
     findByUser: function (req, res) {
@@ -38,9 +38,26 @@ module.exports = {
             userName: req.body.userName
         })
         .then(user => {
-            console.log("I'M IN!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!", user)
             if (user) {
-        }
-})
+            }
+        })
+    },
+    putInCart: function(req, res) {
+        // console.log("I'M IN!!!!!!!!!!!!!!!!!!!!!!!!!%%%!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+        db.User
+          .findOne({ _id: req.params.id })
+          .then(dbUser => {
+              dbUser.cart = req.body
+              return dbUser.save()
+          })
+          .then(dbUser => res.json(dbUser))
+          .catch(err => res.status(422).json(err));
+        },
+    pullFromCart: function(req, res) {
+        db.User
+            .find(req.params.id)
+            .sort({ date: 1})
+            .then(dbCart => res.json(dbCart))
+            .catch(err => res.status(422).json(err));
     }
 }

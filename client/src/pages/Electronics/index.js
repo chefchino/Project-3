@@ -26,9 +26,6 @@ class products extends Component {
             Products = [...Products, singleItem];
         });
     }
-    // componentDidMount() {
-        // this.loadSearch();
-    // }
     loadProduct = () => {
         API.getAllProducts()
         .then(res =>
@@ -82,17 +79,17 @@ class products extends Component {
          const products = Products[index];
         //  products.inCart = true;
         //  products.count = 1;
-         const price = products.price;
+        //  const price = products.price;
         //  products.total = price;
-         this.setState(() => {
-             
-             return { products: Products, cart: [...this.state.cart,
-            products ]};
+         this.setState({
+
+             cart: [...this.state.cart, products ]
          }, () => {
-         console.log(this.state);
-         
-         }
-         );
+            console.log(this.state);
+            var User = sessionStorage.getItem("Logged In")
+            API.addCartItems(this.state.cart, User );
+            console.log({User})
+         });
      };
      
       

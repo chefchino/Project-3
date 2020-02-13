@@ -15,6 +15,7 @@ const UserSchema = new Schema({
   city: { type: String, required: true },
   state: { type: String, required: true },
   zipcode: { type: Number, required: true },
+  cart:{ type: Array },
   isDeleted:{type:Boolean, default: false},
   date: { type: Date, default: Date.now }
 });
