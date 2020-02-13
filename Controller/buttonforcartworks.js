@@ -17,7 +17,6 @@ class products extends Component {
     };
     componentDidMount() {
         this.setProducts();
-        this.loadProduct();
     }
     setProducts = ()=> {
         let Products = [];
@@ -26,9 +25,10 @@ class products extends Component {
             Products = [...Products, singleItem];
         });
     }
-    // componentDidMount() {
+    componentDidMount() {
+        this.loadProduct();
         // this.loadSearch();
-    // }
+    }
     loadProduct = () => {
         API.getAllProducts()
         .then(res =>
@@ -142,3 +142,62 @@ class products extends Component {
 }
 
 export default products;
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+import Wrapper from "../../components/Wrapper";
+import { Container } from "../../components/Grid";
+import React, { Component } from 'react';
+import { BrowserRouter as Router, Route } from "react-router-dom";
+// import NavTabs from "./components/NavBar";
+// import Electronics from "./pages/Electronics";
+
+
+export default class Cart extends Component {
+    render() {
+        return (
+            <div>
+                {this.props.id}
+                <br>
+                {this.props.product}</br>
+            </div>
+        )
+    }
+
+
+
+}
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+import React from "react";
+import "./style.css";
+
+// The ...props means, spread all of the passed props onto this element
+// That way we don't have to define them all individually
+// function CartBtn(props) {
+//   return (
+//     <button  type="submit" disabled={props.inCart ? true : false}
+//     onClick={() => { console.log("added to cart") }}
+//     className="btn btn-success">
+//     {props.inCart ? (<p className="mb=0" disabled>{" "}Carted</p>) : (<p className="mb=0" disabled>{" "} Want This?</p>)}
+// </button>
+//   )
+// }
+
+
+class CartBtn extends Component {
+  addToCart = () => {
+    this.props.onAddToCart(this.props.value);
+  }
+
+  render() {
+    return (
+      <th addToCart={this.addToCart}>
+        {this.props.column}
+      </th>
+    );
+  }
+}
+
+
+export default CartBtn;
+---------------------------------------------------------------------------------------------------------------------------------------------------------------

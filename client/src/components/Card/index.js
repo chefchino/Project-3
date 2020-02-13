@@ -1,6 +1,6 @@
 import React from "react";
 import "./style.css";
-import Electronics from "../../pages/Cart";
+// import Electronics from "../../pages/Cart";
 
 function Card(props) {
     return (
