@@ -1,8 +1,9 @@
 import React from "react";
 import "./style.css";
-import Electronics from "../../pages/Cart";
+
 
 function Card(props) {
+    
     return (
         <div className="card">
             <div className="img-container">
@@ -19,13 +20,13 @@ function Card(props) {
                     <li>
                         <strong>{props.price}</strong>
                     </li>
-                    <button type="cart-btn" onClick={()=>{props.handleAddToCart(props.id)}} 
+                    <button type="cart-btn" 
+                    onClick={()=> {props.handleAddToCart(props.id)}} 
                     
-                        
-                        className="btn btn-success">
+                    className="btn btn-success">
                         Add to Cart
                 </button>
-                    <button type="submit" onClick={()=>{
+                    <button type="submit" onClick={()=>{props.handleDetail(props.id)
                         console.log("you clicked me");
                     }}
                         className="btn btn-success">

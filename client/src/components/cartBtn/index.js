@@ -1,8 +1,8 @@
-// import React from "react";
-// import "./style.css";
+import React from "react";
+import "./style.css";
 
-// // The ...props means, spread all of the passed props onto this element
-// // That way we don't have to define them all individually
+// The ...props means, spread all of the passed props onto this element
+// That way we don't have to define them all individually
 // function CartBtn(props) {
 //   return (
 //     <button  type="submit" disabled={props.inCart ? true : false}
@@ -13,4 +13,20 @@
 //   )
 // }
 
-// export default CartBtn;
+
+class CartBtn extends Component {
+  addToCart = () => {
+    this.props.onAddToCart(this.props.value);
+  }
+
+  render() {
+    return (
+      <th addToCart={this.addToCart}>
+        {this.props.column}
+      </th>
+    );
+  }
+}
+
+
+export default CartBtn;

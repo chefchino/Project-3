@@ -12,9 +12,19 @@ class products extends Component {
         products:[],
         search: "",
         results: [],
-        cart:[]
-        
+        cart: [],
+        modalOpen:true,     
     };
+    componentDidMount() {
+        this.setProducts();
+    }
+    setProducts = ()=> {
+        let Products = [];
+        Products.forEach(item => {
+            const singleItem = {...item };
+            Products = [...Products, singleItem];
+        });
+    }
     componentDidMount() {
         this.loadProduct();
         // this.loadSearch();
@@ -49,38 +59,47 @@ class products extends Component {
         // console.log(this.state.results)
 
      };
-     getItem = (discription) => {
-         const products = this.state.products.find(item => item.discription === discription);
+     getItem = (id) => {
+         const products = this.state.products.find(item => item.id === id);
          return products;
      };
      handleDetail = (discription) => {
-         const products = this.getItem(products);
+         const products = this.getItem(discription);
          this.setState(()=>{
-             return {detailproducts:products}
-
-         })
+             return {Product: products};
+              }, () => {
+                console.log(this.state);
+                }
+             );
+    
      };
-     handleAddToCart = (product)=>{
-         this.props.addToCart(product);
-     }
-    //  addToCart = () => {
-    //      let tempProducts = [...this.state.products];
-    //      const index = tempProducts.indexOf(this.getItem(products));
-    //      const products = tempProducts[index];
-    //      products.inCart = true;
-    //      products.count = 1;
-    //      const price = products.price;
-    //      products.total = price;
-    //      this.setState(() => {
-    //          return { products: tempProducts, cart: [...this.state.cart,
-    //         products ]};
-    //      })
-    //      console.log("added to cart");
-    //  };
+    
+
+     handleAddToCart = (id) => {
+         console.log(id);
+         let Products = [...this.state.products];
+         const index = Products.indexOf(this.getItem(id));
+         const products = Products[index];
+        //  products.inCart = true;
+        //  products.count = 1;
+         const price = products.price;
+        //  products.total = price;
+         this.setState(() => {
+             
+             return { products: Products, cart: [...this.state.cart,
+            products ]};
+         }, () => {
+         console.log(this.state);
+         
+         }
+         );
+     };
+     
+      
      
 
     render() {
-        console.log(this.state.friends)
+        
         return (
             <Container fluid>
 
