@@ -17,7 +17,6 @@ class products extends Component {
     };
     componentDidMount() {
         this.loadProduct();
-        // this.loadSearch();
     }
     loadProduct = () => {
         API.getAllProducts()
@@ -27,7 +26,6 @@ class products extends Component {
             .catch(err => console.log(err));
     };
     loadSearch = () => {
-        // this.setState({products: []})
         API.getProduct(this.state.search)
         .then(res =>
             this.setState({products: res.data, title: "", image: "", category: "", rating: "", price:"", description: "" }))
@@ -40,14 +38,6 @@ class products extends Component {
         e.preventDefault();
         console.log(this.state.search)
         this.loadSearch();
-        // API.getProduct(this.state.search)
-        // .then(res => {
-        //     this.setState({ results: res.products })
-        //     this.setState({search: ""})
-
-        // })
-        // console.log(this.state.results)
-
      };
      getItem = (discription) => {
          const products = this.state.products.find(item => item.discription === discription);
@@ -102,14 +92,9 @@ class products extends Component {
                             image={product.image}
                             handleAddToCart={this.handleAddToCart}
                             handleDetail={this.handleDetail}
-                            
                         />   
                     )
                     )}
-                    
-                    
-                   
-
                 </Wrapper>
             </Container>
             

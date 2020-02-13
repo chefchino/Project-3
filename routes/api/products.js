@@ -7,7 +7,6 @@ router.route("/")
 router
   .route("/:id")
   .get(productController.findByTitle)
-  // .put(productController.update)
   .delete(productController.remove);
 
 module.exports = router;

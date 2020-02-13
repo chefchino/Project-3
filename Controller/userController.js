@@ -40,25 +40,6 @@ module.exports = {
         .then(user => {
             console.log("I'M IN!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!", user)
             if (user) {
-                // if (passportL.authenicate("local", {
-                //     successRedirect: "/electronics",
-                //     failureRedirect:"/",
-                //     failureFlash: 'Invalid username or password.'
-                // }));
-                
-                
-            //     this.passWord)) {
-            //         res.json({
-            //             success: true,
-            //             message: "Login Successful!"
-            //         })
-            //     }
-            // } else {
-            //     res.json({
-            //         success: false,
-            //         message:"Error User Does NOT Exists"})
-            //     }
-            // })
         }
 })
     }
