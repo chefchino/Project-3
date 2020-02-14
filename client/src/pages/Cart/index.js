@@ -16,6 +16,7 @@ class Cart extends Component {
 
     componentDidMount() {
         this.handleGetFromCart();
+        // this.getTotal()
     }
 handleGetFromCart = () => {
     var User = sessionStorage.getItem("Logged In")
@@ -25,10 +26,24 @@ handleGetFromCart = () => {
         )
         .catch(err => console.log(err));
 };
+// getTotal = () => {
+// for (var i = 0; i>this.state.cart.price; i++) {
+//     if (isNaN(this.state.cart.price[i])){
+//         continue;
+//     }
+//     this.state.subtotal += Number(this.state.cart.price[i])
+// }
+// return this.state.subtotal;
+// }
     render() {
         return (
             <Container fluid>
                 <h1 className="title">Ecommerce</h1>
+                <div>
+                    <h4>SubTotal: {this.state.subtotal}</h4>
+                    <h4>Tax: 5%</h4>
+                    <h3>Total: {this.state.total}</h3>
+                </div>
                 <hr></hr>
                 <Wrapper>
                     {this.state.cart.map(cart => (
