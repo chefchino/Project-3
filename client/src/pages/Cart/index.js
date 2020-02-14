@@ -18,7 +18,8 @@ class Cart extends Component {
         this.handleGetFromCart();
     }
 handleGetFromCart = () => {
-    API.getCartItems()
+    var User = sessionStorage.getItem("Logged In")
+    API.getCartItems(User)
     .then(res =>
         this.setState({cart: res.data, title: "", image: "", category: "", rating: "", price:"", description: ""})
         )
@@ -43,7 +44,7 @@ handleGetFromCart = () => {
 
                 </Wrapper>
 
-                
+
                 {/* {this.props.id}
                 <br>
                 {this.props.product}</br> */}
