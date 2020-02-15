@@ -16,25 +16,34 @@ class Cart extends Component {
 
     componentDidMount() {
         this.handleGetFromCart();
-        // this.getTotal()
+        console.log("this.state",this.state)
     }
-handleGetFromCart = () => {
-    var User = sessionStorage.getItem("Logged In")
-    API.getCartItems(User)
-    .then(res =>
-        this.setState({cart: res.data, title: "", image: "", category: "", rating: "", price:"", description: ""})
-        )
+    handleGetFromCart = () => {
+        var User = sessionStorage.getItem("Logged In")
+        API.getCartItems(User)
+        .then(res =>
+            this.setState({cart: res.data, title: "", image: "", category: "", rating: "", price:"", description: ""})
+            )
+            .then(()=> this.getsubTotal())
+            
         .catch(err => console.log(err));
 };
-// getTotal = () => {
+getsubTotal = () => {
+    const totalPrices = this.state.cart.map(item => item.price)
+    console.log(totalPrices, totalPrices.reduce((a, b) => a + b, 0))
+     this.setState({subtotal: totalPrices.reduce((a, b) => a + b, 0)})
+    
+//     .catch(err => console.log(err))
+// };
+
 // for (var i = 0; i>this.state.cart.price; i++) {
 //     if (isNaN(this.state.cart.price[i])){
 //         continue;
 //     }
 //     this.state.subtotal += Number(this.state.cart.price[i])
-// }
+}
 // return this.state.subtotal;
-// }
+
     render() {
         return (
             <Container fluid>
@@ -54,6 +63,7 @@ handleGetFromCart = () => {
                         rating={cart.rating}
                         price={cart.price}
                         image={cart.image}
+                        
                         />
                     ))}
 
