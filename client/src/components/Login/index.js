@@ -5,7 +5,7 @@ function LoginForm(props) {
     return (
         <form className="login-form">
             <div className="form-group">
-                <label htmlFor="Username">UserName:</label>
+                {/* <label htmlFor="Username">UserName:</label> */}
                 <input
                     value={props.username}
                     onChange={props.handleInputChange}

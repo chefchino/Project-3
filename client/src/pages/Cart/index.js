@@ -16,6 +16,7 @@ class Cart extends Component {
 
     componentDidMount() {
         this.handleGetFromCart();
+        // this.handlePurchase();
         console.log("this.state",this.state)
     }
     handleGetFromCart = () => {
@@ -25,6 +26,7 @@ class Cart extends Component {
             this.setState({cart: res.data, title: "", image: "", category: "", rating: "", price:"", description: ""})
             )
             .then(()=> this.getsubTotal())
+            .then(() =>this.getTotal())
             
         .catch(err => console.log(err));
 };
@@ -32,27 +34,29 @@ getsubTotal = () => {
     const totalPrices = this.state.cart.map(item => item.price)
     console.log(totalPrices, totalPrices.reduce((a, b) => a + b, 0))
      this.setState({subtotal: totalPrices.reduce((a, b) => a + b, 0)})
-    
-//     .catch(err => console.log(err))
-// };
-
-// for (var i = 0; i>this.state.cart.price; i++) {
-//     if (isNaN(this.state.cart.price[i])){
-//         continue;
-//     }
-//     this.state.subtotal += Number(this.state.cart.price[i])
+    }
+getTotal =() => {
+    const Total = this.state.subtotal * 1.0475
+    this.setState({total: Total})
 }
-// return this.state.subtotal;
-
+// handlePurchase = () => {
+//     var User = sessionStorage.getItem("Logged In")
+//     API.Purchase(User)
+//     .then(res =>
+//         this.setState({cart: res.data.empty()}))
+// }
     render() {
         return (
             <Container fluid>
                 <h1 className="title">Ecommerce</h1>
-                <div>
-                    <h4>SubTotal: {this.state.subtotal}</h4>
-                    <h4>Tax: 5%</h4>
-                    <h3>Total: {this.state.total}</h3>
-                </div>
+                <Container>
+                    <h7>SubTotal: {this.state.subtotal}</h7>
+                    <br></br>
+                    <h7>Tax: 4.75%</h7>
+                    <h4>Total: {this.state.total}</h4>
+                    {/* <button type="submit" onClick={props.handlePurchase} className="btn btn-success">
+                    Buy IT!</button> */}
+                </Container>
                 <hr></hr>
                 <Wrapper>
                     {this.state.cart.map(cart => (

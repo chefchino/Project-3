@@ -1,4 +1,12 @@
-img {
+.img-container {
     height: 200px;
-    width: 200px;
+    width: 275px;
 }
+.card {
+    height: 350px;
+    width: 275px;
+}
+#BtnCart {
+margin-right: 3px;
+}
+

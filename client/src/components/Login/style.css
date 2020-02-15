@@ -1,0 +1,7 @@
+#userLogin, #passwordLogin {
+    width: 500px;
+    margin-top:5px;
+}
+#passwordLogin {
+    margin-bottom: 5px;
+}

@@ -15,10 +15,13 @@ export default {
     },
     addCartItems: function(cartItem, UserId) {
         console.log("i'M IN!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!&*(",cartItem)
-        return axios.post("api/cart/"+ UserId, cartItem )
+        return axios.post("api/cart/"+ UserId, cartItem)
     },
     getCartItems: function(UserId) {
         return axios.get("api/cart/" + UserId)
+    },
+    Purchase: function(UserId) {
+        return axios.delete("api/cart/" + UserId)
     }
 
 };

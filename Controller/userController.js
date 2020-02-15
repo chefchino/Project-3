@@ -63,5 +63,15 @@ module.exports = {
             // .sort({ date: 1})
             .then(dbUser => res.json(dbUser))
             .catch(err => res.status(422).json(err));
+    },
+    emptyCart: function(req, res) {
+        db.User
+        .findOne({_id: require.params.id })
+        .then(dbUser => {
+            dbUser.cart.remove()
+            return dbUser.save()
+        })
+        .then(dbUser => res.json(dbUser))
+        .catch(err => res.status(422).json(err));
     }
-}
+};
