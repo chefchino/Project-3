@@ -1,7 +1,5 @@
 import React from "react";
 import "./style.css";
-// import {CardFooter} from "reactstrap";
-// import Electronics from "../../pages/Cart";
 
 function Card(props) {
     return (

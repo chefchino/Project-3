@@ -11,7 +11,6 @@
 }
 .content {
     height:175px;
-    /* overflow: auto; */
 }
 
 #BtnCart {
@@ -23,9 +22,6 @@ margin-left:49px;
     padding:2px;
     margin-bottom:9px;
 
-}
-footer {
-    /* padding:5px; */
 }
 #titleInfo {
     height:65px;
