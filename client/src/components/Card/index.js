@@ -1,12 +1,12 @@
 import React from "react";
 import "./style.css";
-import {CardFooter} from "reactstrap";
+// import {CardFooter} from "reactstrap";
 // import Electronics from "../../pages/Cart";
 
 function Card(props) {
     return (
         <div className="card">
-            <div className="img-container" style={{ backgroundImage: `url(${props.image})`, backgroundRepeat: `no-repeat`, backgroundSize: `contain`, }}
+            <div className="img-container" style={{ backgroundImage: `url(${props.image})`, backgroundRepeat: `no-repeat`, backgroundPosition: `center`, backgroundSize: `contain`, }}
             />
             <div className="content">
                 <ul>
@@ -14,13 +14,15 @@ function Card(props) {
                         <strong>{props.title}</strong>
                     </li>
                     <li>
-                        <strong>{props.rating}</strong>
+                        <strong>Rating: {props.rating}</strong>
                     </li>
                     <li>
-                        <strong>{props.price}</strong>
+                        <strong>${props.price}</strong>
                     </li>
-                    <CardFooter className="text-muted">
-                    {/* <footer> */}
+                </ul>
+            </div>
+                    <hr></hr>
+                    <footer>
                     <button type="cart-btn" onClick={()=>{props.handleAddToCart(props.id)}} 
                     
                     
@@ -33,10 +35,7 @@ function Card(props) {
                     className="btn btn-success" id="BtnDetail">
                         Details
                 </button>
-                {/* </footer> */}
-                    </CardFooter>
-                </ul>
-            </div>
+                </footer>
         </div>
 
     );

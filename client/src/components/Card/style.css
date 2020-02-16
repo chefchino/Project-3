@@ -1,17 +1,35 @@
 .img-container {
     height: 200px;
     width: 275px;
+    
 }
 .card {
     height: 350px;
     width: 275px;
+    font-size: 14px;
+    margin-bottom: 3px;
 }
 .content {
     height:175px;
-    overflow: auto;
+    /* overflow: auto; */
 }
 
 #BtnCart {
-margin-right: 3px;
+margin-right: 27px;
+margin-left:49px;
+
+}
+#BtnCart, #BtnDetail {
+    padding:2px;
+    margin-bottom:9px;
+
+}
+footer {
+    /* padding:5px; */
+}
+#titleInfo {
+    height:65px;
+    font-size:15px;
+    overflow: auto;
 }
 
