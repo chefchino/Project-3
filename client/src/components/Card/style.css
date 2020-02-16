@@ -6,6 +6,11 @@
     height: 350px;
     width: 275px;
 }
+.content {
+    height:175px;
+    overflow: auto;
+}
+
 #BtnCart {
 margin-right: 3px;
 }
