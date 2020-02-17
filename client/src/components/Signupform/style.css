@@ -1,0 +1,18 @@
+.form {
+    width: 400px;
+    padding: 10px;
+    position: relative;
+    margin-top: 400px ;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(177, 207, 168);
+    -webkit-box-shadow: 0 -14px 28px rgba(241, 6, 171, 0.938), 0 10px 10px rgba(19, 233, 12, 0.973);
+    box-shadow: 0 -19px 28px rgba(219, 12, 12, 0.973), 0 10px 10px rgba(211, 159, 159, 0.22);
+    text-align: center;
+    
+    
+   
+    
+}
+
