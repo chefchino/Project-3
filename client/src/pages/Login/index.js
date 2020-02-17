@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 import LoginForm from "../../components/Login";
-import "./stlye.css";
+import "./style.css";
 import { Link, Route } from "react-router-dom";
 import Signup from "../Signup";
 import API from "../../utils/API";
+
+
 
 class Login extends Component {
     state = {
@@ -44,15 +46,19 @@ class Login extends Component {
     render() {
         return (
             <div>
-                <Link to="/signup" role="button" className="btn btn-link">
+                {/* <Link to="/signup" role="button" className="btn btn-link">
                     SignUp
       </Link>{" "}
-                <Route exact path="/signup" component={Signup} />
-                <h1 className="title">ECommerce</h1>
+                <Route exact path="/signup" component={Signup} /> */}
+                {/* <h1 className="title">Login</h1> */}
                 <LoginForm
                     handleLoginSubmit={this.handleLoginSubmit}
                     handleInputChange={this.handleInputChange}
                 />
+                 <Link to="/signup" role="button" className="btn btn-link">
+                   click to SIGN UP!
+      </Link>{" "}
+                <Route exact path="/signup" component={Signup} />
             </div>
         )
     }

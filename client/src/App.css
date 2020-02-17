@@ -1,0 +1,24 @@
+:root{
+    --mainRed: rgb(163, 26, 26);
+    --lightRed: rgb(221, 56, 56);
+    --mainWhite: white;
+    --mainDark: rgb(6, 6, 68);
+    --mainYellow: yellow;
+}
+body{
+    font-family: "Oswald", sans-serif !important;
+    background: var(--mainWhite) !important;
+    color: var(--mainDark) !important;
+}
+.text-title {
+    font-family: "Permmenant Marker", cursive;
+    text-transform: uppercase;
+    
+}
+.text-red {
+    color: var(--mainRed);
+}
+.text-bright {
+    color: var(--lightRed);
+}
+

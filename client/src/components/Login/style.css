@@ -1,7 +1,40 @@
-#userLogin, #passwordLogin {
-    width: 500px;
-    margin-top:5px;
+@import url(https://fonts.googleapis.com/css?family=Lobster);
+.login-form {
+    width: 400px;
+    padding: 50px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(122, 16, 16);
+    -webkit-box-shadow: 0 -14px 28px rgba(241, 6, 171, 0.938), 0 10px 10px rgba(19, 233, 12, 0.973);
+    box-shadow: 0 -19px 28px rgba(6, 178, 247, 0.973), 0 10px 10px rgba(211, 159, 159, 0.22);
+    text-align: center;
+    margin: 0;
+    background-size: cover;
 }
-#passwordLogin {
-    margin-bottom: 5px;
+
+
+
+h1.title {
+    font-family: 'Lobster';
+    color: white;
+    
+}
+:root{
+    /* background-color: rgb(102, 20, 20); */
+    background-repeat: repeat;
+    background-size: cover;
+   
+   
+}
+a.btn.btn-link {
+   font-size: small;
+   color: white;
+   background-color: rgb(145, 20, 20);
+   
+  
+}
+nav.navbar.navbar {
+    color:  rgb(133, 75, 75) !important;
 }
