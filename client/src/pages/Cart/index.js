@@ -33,11 +33,11 @@ class Cart extends Component {
 getsubTotal = () => {
     const totalPrices = this.state.cart.map(item => item.price)
     console.log(totalPrices, totalPrices.reduce((a, b) => a + b, 0))
-     this.setState({subtotal: totalPrices.reduce((a, b) => a + b, 0)})
+     this.setState({subtotal: Math.ceil((totalPrices.reduce((a, b) => a + b, 0))*100)/100})
     }
 getTotal =() => {
     const Total = this.state.subtotal * 1.0475
-    this.setState({total: Total})
+    this.setState({total: Math.ceil(Total*100)/100})
 }
 // handlePurchase = () => {
 //     var User = sessionStorage.getItem("Logged In")
