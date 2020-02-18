@@ -20,8 +20,6 @@ export default {
         return axios.get("api/cart/" + UserId)
     },
     Purchase: function(UserId) {
-        console.log("i'M IN!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!&*(",UserId)
         return axios.delete("api/cart/" + UserId)
     }
-
 };

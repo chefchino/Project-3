@@ -1,10 +1,10 @@
 const db = require("../models");
-const bcrypt= require("bcryptjs")
-const passportL= require("passport-local");
+const bcrypt = require("bcryptjs")
+const passportL = require("passport-local");
 
 module.exports = {
     create: function (req, res) {
-        
+
         const {
             firstName,
             lastName,
@@ -28,52 +28,53 @@ module.exports = {
                 state,
                 zipcode
             })
-        .then(dbUser =>res.json(dbUser)
-        )
-        .catch(err =>res.status(422).json(err))
+            .then(dbUser => res.json(dbUser)
+            )
+            .catch(err => res.status(422).json(err))
     },
     findByUser: function (req, res) {
         db.User
-        .findOne({
-            userName: req.body.userName
-        })
-        .then(user => {
-            if (user) {
-            }
-        })
+            .findOne({
+                userName: req.body.userName
+            })
+            .then(user => {
+                if (user) {
+                }
+            })
     },
-    putInCart: function(req, res) {
+    putInCart: function (req, res) {
         db.User
-        .findOne({ _id: req.params.id })
-        .then(dbUser => {
-            dbUser.cart = req.body
-            return dbUser.save()
-        })
-        .then(dbUser => res.json(dbUser))
-        .catch(err => res.status(422).json(err));
+            .findOne({ _id: req.params.id })
+            .then(dbUser => {
+                dbUser.cart = req.body
+                return dbUser.save()
+            })
+            .then(dbUser => res.json(dbUser))
+            .catch(err => res.status(422).json(err));
     },
-    pullFromCart: function(req, res) {
+    pullFromCart: function (req, res) {
         db.User
-        .findOne({_id: req.params.id })
-        .then(dbUser => {
-            // dbUser.cart
-            return dbUser.cart
-        })
-        // .sort({ date: 1})
-        .then(dbUser => res.json(dbUser))
-        .catch(err => res.status(422).json(err));
+            .findOne({ _id: req.params.id })
+            .then(dbUser => {
+                return dbUser.cart
+            })
+            .then(dbUser => res.json(dbUser))
+            .catch(err => res.status(422).json(err));
     },
-    emptyCart: function(req, res) {
+    emptyCart: function (req, res) {
         db.User
-        .findOneAndUpdate({_id: req.params.id}, { $set: { cart: [] }})
-        // .then(dbUser => {
-        //     dbUser.cart.remove()
-        //     console.log("I'M IN!!!!!!!!!!!!!!!!!!!!!!!!!%%%!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
-        // })
-        // .then(dbUser =>{
-        //     return dbUser.save()
-        // })
-        .then(dbUser=> res.json(dbUser))
-        .catch(err => res.status(422).json(err));
-    }
+            .findOneAndUpdate({ _id: req.params.id }, { $set: { cart: [] } })
+            .then(dbUser => res.json(dbUser))
+            .catch(err => res.status(422).json(err));
+    },
+    remove: function(req, res) {
+        db.User
+          .findById({ _id: req.params.id })
+          .then(dbUser => {
+              dbUser.cart.remove(_id)
+              return dbUser.save()
+          })
+          .then(dbUser => res.json(dbUser))
+          .catch(err => res.status(422).json(err));
+      }
 };

@@ -1,6 +1,4 @@
 const db = require("../models");
-
-// Defining methods for the ProductsController
 module.exports = {
   findAll:
    function(req, res) {
@@ -9,14 +7,11 @@ module.exports = {
       .sort({ date: -1 })
       .then(dbProduct => res.json(dbProduct))
       .catch(err => res.status(422).json(err));
- // }
 },
   findByTitle: function(req, res) {
-    console.log("ID",req.params.id)
     db.Product
       .find({$text: {$search: req.params.id}})
       .then(dbProduct =>{
-        console.log("I'm still here",dbProduct)
         res.json(dbProduct)})
       .catch(err => {res.status(422).json(err)
       console.log(err)

@@ -1,8 +1,10 @@
 import React from "react";
 import Details from "../Details"
 import "./style.css";
+import CartBtn from "../cartBtn";
 
 function Card(props) {
+
     return (
         <div className="card">
             <div className="img-container" style={{ backgroundImage: `url(${props.image})`, backgroundRepeat: `no-repeat`, backgroundPosition: `center`, backgroundSize: `contain`, }}
@@ -22,9 +24,7 @@ function Card(props) {
             </div>
             <hr></hr>
             <footer>
-                <button type="cart-btn" onClick={() => { props.handleAddToCart(props.id) }}
-                    className="btn btn-success" id="BtnCart">
-                    Add to Cart</button>
+                <CartBtn onClick={() => { props.handleAddToCart(props.id) }} />
                 <Details id="BtnDetail"
                     image={props.image}
                     title={props.title}

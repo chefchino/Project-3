@@ -8,8 +8,6 @@ import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-
-
 function App() {
   return (
     <Router>
@@ -19,10 +17,8 @@ function App() {
         <Route exact path="/Signup" component={Signup} />
         <Route exact path="/Electronics" component={Electronics} />
         <Route exact path="/Cart" component={Cart} />
-       
       </div>
      </Router>
   );
 }
- 
 export default App;
