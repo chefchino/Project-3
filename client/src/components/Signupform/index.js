@@ -3,6 +3,7 @@ import "./style.css";
 
 function SignupForm(props) {
     return (
+        
         <form className="sigup-form">
             <div className="form">
             <label htmlFor="username">Username:</label>

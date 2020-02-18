@@ -56,7 +56,7 @@ class Login extends Component {
                     handleInputChange={this.handleInputChange}
                 />
                  <Link to="/signup" role="button" className="btn btn-link">
-                   click to SIGN UP!
+                   SIGN UP
       </Link>{" "}
                 <Route exact path="/signup" component={Signup} />
             </div>
