@@ -3,6 +3,7 @@ import "./style.css";
 
 
 
+
 function LoginForm(props) {
     return (
             <form className="login-form">
@@ -32,10 +33,10 @@ function LoginForm(props) {
                 <button type="submit" onClick={props.handleLoginSubmit} className="btn btn-success">
                     Let me in
         </button>
+      
         </div>
-        
-        
         </form>
+        
     );
 }
 

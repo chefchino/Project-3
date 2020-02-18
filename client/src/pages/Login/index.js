@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 import LoginForm from "../../components/Login";
 import "./style.css";
+
 import { Link, Route } from "react-router-dom";
 import Signup from "../Signup";
 import API from "../../utils/API";
+
 
 
 
@@ -59,7 +61,9 @@ class Login extends Component {
                    SIGN UP
       </Link>{" "}
                 <Route exact path="/signup" component={Signup} />
+               
             </div>
+            
         )
     }
 };
