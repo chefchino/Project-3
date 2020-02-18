@@ -51,7 +51,8 @@ deleteCart = () => {
 
         console.log("RES!!!!!!!", res)
     })
-    this.setState({cart: []})
+    this.setState({cart: [], subtotal: 0, total: 0})
+    alert("You purchased the item(s) in your cart!");
 }
 
     render() {

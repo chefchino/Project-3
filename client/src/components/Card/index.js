@@ -20,24 +20,19 @@ function Card(props) {
                     </li>
                 </ul>
             </div>
-                    <hr></hr>
-                    <footer>
-                    <button type="cart-btn" onClick={()=>{props.handleAddToCart(props.id)}} 
-                    
-                    
+            <hr></hr>
+            <footer>
+                <button type="cart-btn" onClick={() => { props.handleAddToCart(props.id) }}
                     className="btn btn-success" id="BtnCart">
-                        Add to Cart
-                </button>
+                    Add to Cart</button>
                 <Details id="BtnDetail"
-                image={props.image}
-                title={props.title}
-                price={props.price}
-                rating={props.rating}
-                description={props.description}
-                >
-
-                </Details>
-                </footer>
+                    image={props.image}
+                    title={props.title}
+                    price={props.price}
+                    rating={props.rating}
+                    description={props.description}
+                />
+            </footer>
 
         </div>
 

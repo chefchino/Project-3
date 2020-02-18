@@ -15,7 +15,7 @@ function LoginForm(props) {
                     name="userName"
                     type="text"
                     className="form-control"
-                    placeholder="UserName"
+                    placeholder="Username"
                     id="userLogin"
                 />
                 <hr></hr>
@@ -25,7 +25,7 @@ function LoginForm(props) {
                     name="passWord"
                     type="password"
                     className="form-control"
-                    placeholder="passWord"
+                    placeholder="password"
                     id="passwordLogin"
                 />
                 <hr></hr>
