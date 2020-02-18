@@ -1,4 +1,24 @@
-.productCards{
-    /* margin: 3px; */
-    /* margin-bottom: 3px; */
+@import url(https://fonts.googleapis.com/css?family=Amatic+SC);
+
+
+.wrapper {
+    background-color: rgb(15, 15, 92);
+}
+.card {
+    -webkit-box-shadow: 0 -14px 28px rgba(241, 6, 171, 0.938), 0 10px 10px rgba(19, 233, 12, 0.973);
+    box-shadow: 0 -2px 29px rgba(223, 247, 6, 0.973), 0 10px 10px rgba(209, 11, 11, 0.856);
+}
+button#BtnCart {
+    font-family: 'Amatic SC';
+    width: 80px;
+
+}
+button#BtnDetail {
+    font-family: 'Amatic SC';
+    width: 60px;
+}
+input#search {
+    -webkit-box-shadow: 0 -14px 28px rgba(241, 41, 6, 0.938), 0 10px 10px rgba(19, 233, 12, 0.973);
+    box-shadow: 0 -2px 29px rgba(247, 34, 6, 0.973), 0 10px 10px rgba(209, 11, 11, 0.856);
+
 }

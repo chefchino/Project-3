@@ -6,7 +6,7 @@ import { Container } from "reactstrap";
 
 function LoginForm(props) {
     return (
-        <form className="login-form">
+            <form className="login-form">
             <div className="form-group">
             <h1 className="title">Login</h1>
                 {/* <label htmlFor="Username">UserName:</label> */}
@@ -31,7 +31,7 @@ function LoginForm(props) {
                 />
                 <hr></hr>
                 <button type="submit" onClick={props.handleLoginSubmit} className="btn btn-success">
-                    Login
+                    Let me in
         </button>
         </div>
         
