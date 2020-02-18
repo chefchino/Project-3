@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import "./style.css";
 
 const Details = (props) => {
     const {
-        buttonLabel,
         className
     } = props;
 
@@ -14,18 +14,19 @@ const Details = (props) => {
     const externalCloseBtn = <button className="close" style={{ position: 'absolute', top: '15px', right: '15px' }} onClick={toggle}>&times;</button>;
     return (
         <div>
-            <Button color="success" onClick={toggle}>{buttonLabel}</Button>
+            <Button id="BtnDetail"color="success" onClick={toggle}>Details</Button>
             <Modal isOpen={modal} toggle={toggle} className={className} external={externalCloseBtn}>
-                <ModalHeader>Modal title</ModalHeader>
+                <ModalHeader>{props.title}</ModalHeader>
                 <ModalBody>
-                    <h1>{props.title}</h1>
-                    <h3>{props.price}</h3>
-                    <h4 className="ratings">{props.rating}</h4>
+                <div className="img-container" style={{ backgroundImage: `url(${props.image})`, backgroundRepeat: `no-repeat`, backgroundPosition: `center`, backgroundSize: `contain`, }}
+            />
+                    <h3>${props.price}</h3>
+                    <h4>Rating: {props.rating}</h4>
                     <h4>Description</h4>
                     <p>{props.description}</p>
                 </ModalBody>
                 <ModalFooter>
-                    <Button color="primary" onClick={toggle}>Do Something</Button>{' '}
+                    
                     <Button color="secondary" onClick={toggle}>Cancel</Button>
                 </ModalFooter>
             </Modal>

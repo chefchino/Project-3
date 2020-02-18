@@ -28,13 +28,8 @@ function Card(props) {
                     className="btn btn-success" id="BtnCart">
                         Add to Cart
                 </button>
-                    {/* <button type="submit" onClick={()=>{
-                        console.log("you clicked me");
-                    }}
-                    className="btn btn-success" id="BtnDetail">
-                        Details
-                </button> */}
-                <Details
+                <Details id="BtnDetail"
+                image={props.image}
                 title={props.title}
                 price={props.price}
                 rating={props.rating}
