@@ -53,25 +53,27 @@ module.exports = {
         .catch(err => res.status(422).json(err));
     },
     pullFromCart: function(req, res) {
-        // console.log("I'M IN!!!!!!!!!!!!!!!!!!!!!!!!!%%%!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
         db.User
-            .findOne({_id: req.params.id })
-            .then(dbUser => {
-                // dbUser.cart
-                return dbUser.cart
-            })
-            // .sort({ date: 1})
-            .then(dbUser => res.json(dbUser))
-            .catch(err => res.status(422).json(err));
+        .findOne({_id: req.params.id })
+        .then(dbUser => {
+            // dbUser.cart
+            return dbUser.cart
+        })
+        // .sort({ date: 1})
+        .then(dbUser => res.json(dbUser))
+        .catch(err => res.status(422).json(err));
     },
     emptyCart: function(req, res) {
         db.User
-        .findOne({_id: require.params.id })
-        .then(dbUser => {
-            dbUser.cart.remove()
-            return dbUser.save()
-        })
-        .then(dbUser => res.json(dbUser))
+        .findOneAndUpdate({_id: req.params.id}, { $set: { cart: [] }})
+        // .then(dbUser => {
+        //     dbUser.cart.remove()
+        //     console.log("I'M IN!!!!!!!!!!!!!!!!!!!!!!!!!%%%!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+        // })
+        // .then(dbUser =>{
+        //     return dbUser.save()
+        // })
+        .then(dbUser=> res.json(dbUser))
         .catch(err => res.status(422).json(err));
     }
 };

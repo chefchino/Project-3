@@ -120,6 +120,7 @@ class products extends Component {
                             rating={product.rating}
                             price={product.price}
                             image={product.image}
+                            description={product.description}
                             handleAddToCart={this.handleAddToCart}
                             handleDetail={this.handleDetail}
 

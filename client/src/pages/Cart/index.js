@@ -39,12 +39,21 @@ getTotal =() => {
     const Total = this.state.subtotal * 1.0475
     this.setState({total: Math.ceil(Total*100)/100})
 }
-// handlePurchase = () => {
-//     var User = sessionStorage.getItem("Logged In")
-//     API.Purchase(User)
-//     .then(res =>
-//         this.setState({cart: res.data.empty()}))
-// }
+handlePurchase = e => {
+    e.preventDefault();
+    this.deleteCart();
+}
+deleteCart = () => {
+    var User = sessionStorage.getItem("Logged In")
+    console.log("I'M IN!@##$#@!@#$@#$@",User)
+    API.Purchase(User)
+    .then(res => {
+
+        console.log("RES!!!!!!!", res)
+    })
+    this.setState({cart: []})
+}
+
     render() {
         return (
             <Container fluid>
@@ -54,8 +63,10 @@ getTotal =() => {
                     <br></br>
                     <h7>Tax: 4.75%</h7>
                     <h4>Total: {this.state.total}</h4>
-                    {/* <button type="submit" onClick={props.handlePurchase} className="btn btn-success">
-                    Buy IT!</button> */}
+                    <button type="submit"  
+                    onClick={this.handlePurchase}
+                     className="btn btn-success">
+                    Buy IT!</button>
                 </Container>
                 <hr></hr>
                 <Wrapper>
