@@ -13,11 +13,11 @@ app.use(passport.session());
 
 
 // console.log(routes)
-app.use("/", routes);
 
 if (process.env.NODE_ENV === "production") {
     app.use(express.static("client/build"));
-  }
+}
+app.use("/", routes);
 
 mongoose.connect(process.env.MONGODB_URI || "mongodb://herokuCommerce:herokuCommerce1@ds263928.mlab.com:63928/heroku_t923rhsj")
 
