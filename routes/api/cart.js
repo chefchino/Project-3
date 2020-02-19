@@ -5,7 +5,8 @@ router.route("/:id")
 .get(userController.pullFromCart)
 .post(userController.putInCart)
 .delete(userController.emptyCart)
-.delete(userController.remove)
+// router.route("/:id/:index")
+// .delete(userController.remove)
 
 
 module.exports = router;

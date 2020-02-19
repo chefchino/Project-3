@@ -15,11 +15,11 @@ app.use(passport.session());
 // console.log(routes)
 app.use("/", routes);
 
-// if (process.env.NODE_ENV === "production") {
-//     app.use(express.static("client/build"));
-//   }
+if (process.env.NODE_ENV === "production") {
+    app.use(express.static("client/build"));
+  }
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/productlist")
+mongoose.connect(process.env.MONGODB_URI || "mongodb://herokuCommerce:herokuCommerce1@ds263928.mlab.com:63928/heroku_t923rhsj")
 
 app.listen(PORT, function () {
     console.log(`API Sever is listening on PORT ${PORT}!`)

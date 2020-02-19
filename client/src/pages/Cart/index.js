@@ -13,6 +13,13 @@ class Cart extends Component {
         this.handleGetFromCart();
         console.log("this.state", this.state)
     }
+    deleteItem = () => {
+        var User = sessionStorage.getItem("Logged In")
+        API.deleteItem(User)
+        .then(res =>
+            this.setState({cart: res.data, title: "", image: "", category: "", rating: "", price: "", description: ""})
+            )
+    }
     handleGetFromCart = () => {
         var User = sessionStorage.getItem("Logged In")
         API.getCartItems(User)
