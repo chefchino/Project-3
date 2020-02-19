@@ -16,7 +16,7 @@ function LoginForm(props) {
                     name="userName"
                     type="text"
                     className="form-control"
-                    placeholder="UserName"
+                    placeholder="Username"
                     id="userLogin"
                 />
                 <hr></hr>
@@ -26,15 +26,17 @@ function LoginForm(props) {
                     name="passWord"
                     type="password"
                     className="form-control"
-                    placeholder="passWord"
+                    placeholder="password"
                     id="passwordLogin"
                 />
                 <hr></hr>
                 <button type="submit" onClick={props.handleLoginSubmit} className="btn btn-success">
-                    Let me in
+                    Let me in now!
         </button>
+        
       
         </div>
+       
         </form>
         
     );

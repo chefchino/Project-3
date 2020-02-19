@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import SignupForm from "../../components/Signupform";
 import "./style.css";
 import API from "../../utils/API";
-
 class Signup extends Component {
     state = {
         firstName: "",
@@ -15,46 +14,44 @@ class Signup extends Component {
         state: "",
         zipcode: ""
     }
-
     handleSignUp = () => {
         if (this.state.firstName &&
             this.state.lastName &&
             this.state.email &&
-            this.state.userName&&
+            this.state.userName &&
             this.state.passWord &&
             this.state.street &&
             this.state.city &&
             this.state.state &&
             this.state.zipcode
-            ) {
-                API.signUp({
-                    firstName: this.state.firstName, 
-                    lastName: this.state.lastName, 
-                    userName: this.state.userName, 
-                    passWord: this.state.passWord, 
-                    email: this.state.email, 
-                    street: this.state.street, 
-                    city: this.state.city, 
-                    state: this.state.state, 
-                    zipcode: this.state.zipcode  
-                })
-                .then(function(res) {
+        ) {
+            API.signUp({
+                firstName: this.state.firstName,
+                lastName: this.state.lastName,
+                userName: this.state.userName,
+                passWord: this.state.passWord,
+                email: this.state.email,
+                street: this.state.street,
+                city: this.state.city,
+                state: this.state.state,
+                zipcode: this.state.zipcode
+            })
+                .then(function (res) {
                     console.log("Added new User!")
                     sessionStorage.setItem("NewUser!!!", res.id)
                     window.location.replace("/electronics")
                 })
                 .catch(err => console.log(err));
-            }
-            console.log("firstName:", this.state.firstName, 
-                        "lastName:", this.state.lastName, 
-                        "userName:", this.state.userName, 
-                        "passWord:", this.state.passWord, 
-                        "email:", this.state.email, 
-                        "street:", this.state.street, 
-                        "city:", this.state.city, 
-                        "state:", this.state.state, 
-                        "zipcode:", this.state.zipcode)
-
+        }
+        console.log("firstName:", this.state.firstName,
+            "lastName:", this.state.lastName,
+            "userName:", this.state.userName,
+            "passWord:", this.state.passWord,
+            "email:", this.state.email,
+            "street:", this.state.street,
+            "city:", this.state.city,
+            "state:", this.state.state,
+            "zipcode:", this.state.zipcode)
     }
     handleInputChange = e => {
         const { name, value } = e.target;
@@ -64,13 +61,12 @@ class Signup extends Component {
     };
     handleFormSubmit = e => {
         e.preventDefault();
-       this.handleSignUp();
+        this.handleSignUp();
     }
     render() {
         return (
             <div>
-
-                <h1 className="title">ECommerce</h1>
+                <h1 className="title">i</h1>
                 <SignupForm
                     handleFormSubmit={this.handleFormSubmit}
                     handleInputChange={this.handleInputChange}

@@ -12,18 +12,23 @@
 .content {
     height:175px;
 }
+footer {
+    position: relative;
+    height: 50px;
+}
 
 #BtnCart {
-margin-right: 27px;
-margin-left:49px;
-
+    float:left;
+margin-left:10px;
+    margin-bottom: 17px;
 }
-#BtnCart, #BtnDetail {
-    padding:2px;
-    margin-bottom:9px;
-
+#BtnDetail {
+    float: right;
+    margin-right:10px;
+    margin-bottom: 17px;
 }
 #titleInfo {
+    clear: both;
     height:65px;
     font-size:15px;
     overflow: auto;

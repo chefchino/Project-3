@@ -1,8 +1,10 @@
 import React from "react";
 import Details from "../Details"
 import "./style.css";
+import CartBtn from "../cartBtn";
 
 function Card(props) {
+
     return (
         <div className="card">
             <div className="img-container" style={{ backgroundImage: `url(${props.image})`, backgroundRepeat: `no-repeat`, backgroundPosition: `center`, backgroundSize: `contain`, }}
@@ -20,24 +22,17 @@ function Card(props) {
                     </li>
                 </ul>
             </div>
-                    <hr></hr>
-                    <footer>
-                    <button type="cart-btn" onClick={()=>{props.handleAddToCart(props.id)}} 
-                    
-                    
-                    className="btn btn-success" id="BtnCart">
-                        Add to Cart
-                </button>
+            <hr></hr>
+            <footer>
+                <CartBtn onClick={() => { props.handleAddToCart(props.id) }} />
                 <Details id="BtnDetail"
-                image={props.image}
-                title={props.title}
-                price={props.price}
-                rating={props.rating}
-                description={props.description}
-                >
-
-                </Details>
-                </footer>
+                    image={props.image}
+                    title={props.title}
+                    price={props.price}
+                    rating={props.rating}
+                    description={props.description}
+                />
+            </footer>
 
         </div>
 

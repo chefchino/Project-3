@@ -4,8 +4,10 @@
     width: 400px;
     padding: 50px;
     position: absolute;
-    top: 50%;
+    
+    top: 73%;
     left: 50%;
+    margin-top: 400px;
     transform: translate(-50%, -50%);
     background-color: rgb(11, 31, 87);
     -webkit-box-shadow: 0 -14px 28px rgba(241, 6, 171, 0.938), 0 10px 10px rgba(19, 233, 12, 0.973);
@@ -14,7 +16,12 @@
     margin: 0;
     background-size: cover;
     border-radius: 25px;
+    /* margin-bottom: 160px; */
 }
+/* form.login-form {
+    margin-bottom: 160px;
+} */
+
 
 
 
@@ -40,11 +47,14 @@ a.btn.btn-link {
    position: absolute;
    top: 50%;
    left: 50%;
-   margin-top: 180px;
+   margin-top: 310px;
    margin-left: -50px;
+   
+   
+   
 }
 button.btn.btn-success {
     font-family: 'Sigmar One';
+    width: fit-content;
 
 }
-

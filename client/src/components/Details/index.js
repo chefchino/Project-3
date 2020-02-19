@@ -27,7 +27,7 @@ const Details = (props) => {
                 </ModalBody>
                 <ModalFooter>
                     
-                    <Button color="secondary" onClick={toggle}>Cancel</Button>
+                    <Button className="btn btn-success"id="detailBtn"  onClick={toggle}>Close</Button>
                 </ModalFooter>
             </Modal>
         </div>

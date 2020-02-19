@@ -1,4 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Amatic+SC);
+@import url(https://fonts.googleapis.com/css?family=Indie+Flower);
 
 
 .wrapper {
@@ -22,3 +23,4 @@ input#search {
     box-shadow: 0 -2px 29px rgba(247, 34, 6, 0.973), 0 10px 10px rgba(209, 11, 11, 0.856);
 
 }
+
