@@ -1,12 +1,36 @@
 .img-container {
     height: 200px;
     width: 275px;
+    
 }
 .card {
     height: 350px;
     width: 275px;
+    font-size: 14px;
+    margin-bottom: 3px;
 }
+.content {
+    height:175px;
+}
+footer {
+    position: relative;
+    height: 50px;
+}
+
 #BtnCart {
-margin-right: 3px;
+    float:left;
+margin-left:10px;
+    margin-bottom: 17px;
+}
+#BtnDetail {
+    float: right;
+    margin-right:10px;
+    margin-bottom: 17px;
+}
+#titleInfo {
+    clear: both;
+    height:65px;
+    font-size:15px;
+    overflow: auto;
 }
 

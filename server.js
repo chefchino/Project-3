@@ -3,7 +3,7 @@ var mongoose = require("mongoose");
 var routes = require("./routes");
 var passport = require("./routes/api/passport");
 var session = require("express-session");
-var app =express();
+var app = express();
 var PORT = process.env.PORT || 3001;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -13,7 +13,7 @@ app.use(passport.session());
 
 
 // console.log(routes)
-app.use("/",routes);
+app.use("/", routes);
 
 // if (process.env.NODE_ENV === "production") {
 //     app.use(express.static("client/build"));
@@ -21,6 +21,6 @@ app.use("/",routes);
 
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/productlist")
 
-app.listen(PORT, function() {
+app.listen(PORT, function () {
     console.log(`API Sever is listening on PORT ${PORT}!`)
 });

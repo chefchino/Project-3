@@ -14,7 +14,6 @@ export default {
         return axios.post("api/signup", userData)
     },
     addCartItems: function(cartItem, UserId) {
-        console.log("i'M IN!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!&*(",cartItem)
         return axios.post("api/cart/"+ UserId, cartItem)
     },
     getCartItems: function(UserId) {
@@ -23,5 +22,4 @@ export default {
     Purchase: function(UserId) {
         return axios.delete("api/cart/" + UserId)
     }
-
 };

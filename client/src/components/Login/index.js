@@ -1,12 +1,12 @@
 import React from "react";
 import "./style.css";
-import { Container } from "reactstrap";
+
 
 
 
 function LoginForm(props) {
     return (
-        <form className="login-form">
+            <form className="login-form">
             <div className="form-group">
             <h1 className="title">Login</h1>
                 {/* <label htmlFor="Username">UserName:</label> */}
@@ -16,7 +16,7 @@ function LoginForm(props) {
                     name="userName"
                     type="text"
                     className="form-control"
-                    placeholder="UserName"
+                    placeholder="Username"
                     id="userLogin"
                 />
                 <hr></hr>
@@ -26,17 +26,19 @@ function LoginForm(props) {
                     name="passWord"
                     type="password"
                     className="form-control"
-                    placeholder="passWord"
+                    placeholder="password"
                     id="passwordLogin"
                 />
                 <hr></hr>
                 <button type="submit" onClick={props.handleLoginSubmit} className="btn btn-success">
-                    Login
+                    Let me in now!
         </button>
+        
+      
         </div>
-        
-        
+       
         </form>
+        
     );
 }
 

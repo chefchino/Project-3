@@ -7,34 +7,33 @@ passport.use(new LocalStrategy(
     usernameField: "userName",
     passwordField: "passWord"
   },
-  function(userName, passWord, done) {
+  function (userName, passWord, done) {
     console.log("trying", userName, passWord)
     db.User.findOne({
       userName: userName
     })
-    .then(function(dbUser) {
-      console.log(dbUser.validPassword(passWord))
-      if (!dbUser) {
-        return done(null, false, {
-          message: "Incorrect userName."
-        });
-      }
-      else if (!dbUser.validPassword(passWord)) {
-        console.log("I'M IN!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!##$")
-        return done(null, false, {
-          message: "Incorrect password."
-        });
-      }
-      return done(null, dbUser);
-    });
+      .then(function (dbUser) {
+        console.log(dbUser.validPassword(passWord))
+        if (!dbUser) {
+          return done(null, false, {
+            message: "Incorrect userName."
+          });
+        }
+        else if (!dbUser.validPassword(passWord)) {
+          return done(null, false, {
+            message: "Incorrect password."
+          });
+        }
+        return done(null, dbUser);
+      });
   }
 ));
 
-passport.serializeUser(function(user, cb) {
+passport.serializeUser(function (user, cb) {
   cb(null, user);
 });
 
-passport.deserializeUser(function(obj, cb) {
+passport.deserializeUser(function (obj, cb) {
   cb(null, obj);
 });
 
