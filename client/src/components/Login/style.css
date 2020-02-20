@@ -4,7 +4,7 @@
     width: 400px;
     padding: 50px;
     position: absolute;
-    top: 50%;
+    top: 73%;
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: rgb(11, 31, 87);
@@ -38,10 +38,10 @@ a.btn.btn-link {
    width: 100px;
    padding: 2px;
    position: absolute;
-   top: 50%;
+   top: 68%;
    left: 50%;
    margin-top: 180px;
-   margin-left: -47px;
+   margin-left: -50px;
 }
 button.btn.btn-success {
     font-family: 'Sigmar One';

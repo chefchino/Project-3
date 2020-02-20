@@ -77,7 +77,7 @@ class products extends Component {
         return (
             <Container fluid>
 
-                <h1 className="title">Ecommerce</h1>
+                <h1 className="title">ee</h1>
                 <SearchBar
                     handleFormSubmit={this.handleFormSubmit}
                     handleInputChange={this.handleInputChange}

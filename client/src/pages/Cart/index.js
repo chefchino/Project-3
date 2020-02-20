@@ -55,7 +55,7 @@ class Cart extends Component {
     render() {
         return (
             <Container fluid>
-                <h1 className="title">Ecommerce</h1>
+                <h1 className="title">ee</h1>
                 <Container>
                     <h7>SubTotal: {this.state.subtotal}</h7>
                     <br></br>
