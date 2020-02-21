@@ -21,8 +21,8 @@ export default {
     },
     Purchase: function(UserId) {
         return axios.delete("api/cart/" + UserId)
+    },
+    deleteItem: function(UserId, item) {
+        return axios.put("api/cart/" + UserId, item)
     }
-    // deleteItem: function(UserId, index) {
-    //     return axios.delete("api/cart/" + UserId, index)
-    // }
 };

@@ -13,13 +13,7 @@ class Cart extends Component {
         this.handleGetFromCart();
         console.log("this.state", this.state)
     }
-    deleteItem = () => {
-        var User = sessionStorage.getItem("Logged In")
-        API.deleteItem(User)
-        .then(res =>
-            this.setState({cart: res.data, title: "", image: "", category: "", rating: "", price: "", description: ""})
-            )
-    }
+
     handleGetFromCart = () => {
         var User = sessionStorage.getItem("Logged In")
         API.getCartItems(User)
@@ -52,6 +46,15 @@ class Cart extends Component {
         this.setState({ cart: [], subtotal: 0, total: 0 })
         alert("You purchased the item(s) in your cart!");
     }
+    deleteItem = () => {
+        var User = sessionStorage.getItem("Logged In")
+        var index = this.state.cart.id
+        API.deleteItem(User, index)
+        .then(res => {
+            console.log("RES%%%%%%%%%",res)
+            this.handleGetFromCart();
+        })
+    }
     render() {
         return (
             <Container fluid>
@@ -71,11 +74,13 @@ class Cart extends Component {
                     {this.state.cart.map(cart => (
                         <Card
                             id={cart.id}
-                            key={cart.id}
+                            key={cart._id}
                             title={cart.title}
                             rating={cart.rating}
                             price={cart.price}
                             image={cart.image}
+                            description={cart.description}
+                            deleteItem={this.deleteItem}
                         />
                     ))}
                 </Wrapper>

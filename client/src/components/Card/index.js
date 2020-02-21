@@ -2,13 +2,15 @@ import React from "react";
 import Details from "../Details"
 import "./style.css";
 import CartBtn from "../cartBtn";
-// import DeleteBtn from "../../components/deleteBtn";
+import DeleteBtn from "../../components/deleteBtn";
 
 function Card(props) {
 
     return (
         <div className="card">
-            {/* <DeleteBtn onClick={() => props.deleteItem(props.id)}/> */}
+            <div>
+            <DeleteBtn onClick={() =>{ props.deleteItem(props.id)}}/>
+            </div>
             <div className="img-container" style={{ backgroundImage: `url(${props.image})`, backgroundRepeat: `no-repeat`, backgroundPosition: `center`, backgroundSize: `contain`, }}
             />
             <div className="content">

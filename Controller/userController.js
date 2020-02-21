@@ -61,20 +61,22 @@ module.exports = {
             .then(dbUser => res.json(dbUser))
             .catch(err => res.status(422).json(err));
     },
+    remove: function(req, res) {
+        console.log("I'M INNN!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+        db.User
+        .findById({ _id: req.params.id })
+        .then(dbUser => {
+            dbUser.cart.splice(req.params.index, 1)
+              return dbUser.save()
+          })
+          .then(dbUser => res.json(dbUser))
+          .catch(err => res.status(422).json(err));
+      },
     emptyCart: function (req, res) {
+        console.log("Wrong DELETE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
         db.User
             .findOneAndUpdate({ _id: req.params.id }, { $set: { cart: [] } })
             .then(dbUser => res.json(dbUser))
             .catch(err => res.status(422).json(err));
     }
-    // remove: function(req, res) {
-    //     db.User
-    //       .findById({ _id: req.params.id })
-    //       .then(dbUser => {
-    //           dbUser.cart.splice(req.params.index, 1)
-    //           return dbUser.save()
-    //       })
-    //       .then(dbUser => res.json(dbUser))
-    //       .catch(err => res.status(422).json(err));
-    //   }
 };
